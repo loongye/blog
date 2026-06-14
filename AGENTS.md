@@ -14,7 +14,11 @@ Astro 6 + Starlight 0.40 personal homepage (Yong En · Full Stack Engineer). MDX
 | `pnpm astro` | Passthrough to Astro CLI |
 | `pnpm install --frozen-lockfile` | Install deps (CI-safe, no lockfile changes) |
 
-No test, lint, or typecheck scripts are configured. `pnpm astro check` can be used for diagnostics if `@astrojs/check` is installed.
+No test, lint, or typecheck scripts are configured.
+
+## Deployment
+
+Deployed to Cloudflare. The `@astrojs/cloudflare` adapter is configured with `prerenderEnvironment: 'node'` — this avoids Node.js module errors (`path`, `fs`, `url`) during prerendering that occur with the default `workerd` runtime.
 
 ## Code Organization
 
