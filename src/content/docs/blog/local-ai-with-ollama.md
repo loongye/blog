@@ -12,11 +12,6 @@ Cloud AI APIs are convenient, but they come with tradeoffs: latency, privacy con
 
 Ollama is a tool for running large language models locally on your own machine. It wraps model weights, inference, and a simple OpenAI-compatible API into a single CLI. You pull a model by name, run it, and interact with it — no cloud account required.
 
-```sh
-ollama pull deepseek-r1
-ollama run deepseek-r1
-```
-
 It supports dozens of open-weight models: Llama, Mistral, Qwen, Phi, DeepSeek, Gemma, CodeGemma, and more. Quantized variants let you run models that would otherwise require enterprise GPUs on consumer hardware.
 
 ## Why go local?
@@ -44,23 +39,7 @@ Apple Silicon Macs with unified memory punch above their weight here — a 64GB 
 
 ## Integrating with coding tools
 
-Ollama exposes an OpenAI-compatible API at `localhost:11434`, so most AI coding tools can use it as a backend with minimal config:
-
-```json
-{
-  "providers": {
-    "ollama": {
-      "baseURL": "http://localhost:11434/v1",
-      "models": {
-        "codellama": {
-          "model": "codellama:7b",
-          "contextWindow": 16384
-        }
-      }
-    }
-  }
-}
-```
+Ollama exposes an OpenAI-compatible API at `localhost:11434`, so most AI coding tools can use it as a backend with minimal config.
 
 Point Crush, OpenCode, Continue, or any OpenAI-compatible agent at this endpoint and you're running fully local.
 
@@ -76,7 +55,7 @@ Local models excel at tasks that don't require frontier-level reasoning but bene
 
 ## The tradeoff
 
-Local models are not competitive with GPT-5 or Claude Sonnet on complex reasoning, multi-step planning, or nuanced code generation. The gap has narrowed — Qwen 2.5 32B and DeepSeek V2 Lite hold their own surprisingly well — but frontier models are still in a different league.
+Local models are not competitive with GPT or Claude on complex reasoning, multi-step planning, or nuanced code generation. The gap has narrowed — Qwen 2.5 32B and DeepSeek V2 Lite hold their own surprisingly well — but frontier models are still in a different league.
 
 The trick is knowing when to use which. Quick iterations and sensitive work stay local. Heavy lifting goes to the cloud. Having both available and switching between them is the sweet spot.
 
@@ -87,10 +66,10 @@ The trick is knowing when to use which. Quick iterations and sensitive work stay
 brew install ollama
 
 # Pull a model
-ollama pull codellama:7b
+ollama pull gemma4:12b
 
 # Run it
-ollama run codellama:7b
+ollama run gemma4:12b
 ```
 
 One command to pull, one to run. From there, point your coding agent at `http://localhost:11434/v1` and you're operational.
