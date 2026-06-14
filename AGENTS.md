@@ -12,6 +12,7 @@ Astro 6 + Starlight 0.40 personal homepage (Yong En · Full Stack Engineer). MDX
 | `pnpm build` | Build static site to `dist/` |
 | `pnpm preview` | Preview built site locally |
 | `pnpm astro` | Passthrough to Astro CLI |
+| `pnpm install --frozen-lockfile` | Install deps (CI-safe, no lockfile changes) |
 
 No test, lint, or typecheck scripts are configured. `pnpm astro check` can be used for diagnostics if `@astrojs/check` is installed.
 
@@ -55,6 +56,7 @@ dist/                     — Build output (gitignored)
 
 - **No linting or type checking is configured** — `tsconfig.json` extends `astro/tsconfigs/strict` but the project has no `astro check` or typecheck script.
 - **pnpm strictness**: `pnpm-workspace.yaml` has `allowBuilds` for `esbuild` and `sharp` — if adding dependencies with native builds, they may need to be added here.
+- **pnpm workspace gotcha**: `pnpm-workspace.yaml` must have a `packages` field or `pnpm install` fails with `packages field missing or empty`. Single-project workspaces use `packages: ['*']`.
 - **Sidebar mismatches**: If a content file exists but isn't in the sidebar config, it will still be accessible by URL but won't appear in navigation. Conversely, a sidebar entry with a non-existent `slug` silently links to a 404.
 - **File-based routing**: The URL path is the file path relative to `src/content/docs/`, minus the extension. A file at `src/content/docs/guides/example.md` becomes `/guides/example/`.
 - **Asset paths**: Assets referenced in MDX/Markdown frontmatter (like hero images) use paths relative to the content file. The index.mdx references `../../assets/houston.webp`.
