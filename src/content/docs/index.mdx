@@ -1,40 +1,42 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Yong En
+description: Full Stack Engineer building for the web.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Full Stack Engineer · Building for the web
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: About Me
+      link: /about/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: My Projects
+      link: /projects/
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+Welcome to my corner of the web.
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+<CardGrid>
+  <a href="/about/" style="text-decoration: none; display: block;">
+    <Card title="About" icon="information">
+      Learn more about me, my background, and what I do.
+    </Card>
+  </a>
+  <a href="/blog/" style="text-decoration: none; display: block;">
+    <Card title="Blog" icon="pencil">
+      Thoughts, notes, and things I'm working on.
+    </Card>
+  </a>
+  <a href="/projects/" style="text-decoration: none; display: block;">
+    <Card title="Projects" icon="setting">
+      Things I've built and contributed to.
+    </Card>
+  </a>
+  <a href="/now/" style="text-decoration: none; display: block;">
+    <Card title="Now" icon="clock">
+      What I'm focused on right now.
+    </Card>
+  </a>
 </CardGrid>
