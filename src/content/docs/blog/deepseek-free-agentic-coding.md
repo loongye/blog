@@ -42,8 +42,6 @@ The 1M context window is a standout feature. You can feed it your entire codebas
 
 It's free for a reason. You get 200 requests per day and lower priority queueing behind paid traffic. Under heavy load, requests may take longer or be throttled. For production workloads or intensive sessions, you'd want to add credits or switch to a paid model.
 
-Topping up **US$10** on OpenCode Zen unlocks a substantially higher request limit while still using the free model — a good middle ground if the free tier feels tight but you're not ready to commit to paid models.
-
 But for learning, prototyping, personal projects, and exploring what agentic coding feels like? It's more than enough.
 
 ## Why this matters
