@@ -25,30 +25,7 @@ You can configure Crush to use any LLM provider — OpenAI, Anthropic, Groq, Goo
 
 ## Setting it up
 
-The setup is straightforward. Get an API key from OpenRouter, then configure Crush to use it as a provider:
-
-```json
-{
-  "providers": {
-    "openrouter": {
-      "envVar": "OPENROUTER_API_KEY",
-      "baseURL": "https://openrouter.ai/api/v1",
-      "models": {
-        "claude": {
-          "model": "anthropic/claude-sonnet-4-20250514",
-          "contextWindow": 200000,
-          "maxOutput": 8192
-        },
-        "gpt": {
-          "model": "openai/gpt-4o",
-          "contextWindow": 128000,
-          "maxOutput": 8192
-        }
-      }
-    }
-  }
-}
-```
+The setup is straightforward. Get an API key from OpenRouter, then [configure](https://github.com/charmbracelet/crush#custom-providers) Crush to use it as a provider.
 
 Now `crush` in any project directory gives you a full agentic coding session, backed by whichever model you choose.
 
@@ -56,8 +33,8 @@ Now `crush` in any project directory gives you a full agentic coding session, ba
 
 I typically keep multiple sessions open for different tasks. The ability to switch models is surprisingly useful:
 
-- **Claude Sonnet** for complex refactoring and architectural work — it's better at reasoning through multi-file changes
-- **GPT-4o** for quick iterations, boilerplate, and exploration — faster, cheaper
+- **Claude** for complex refactoring and architectural work — it's better at reasoning through multi-file changes
+- **GPT** for quick iterations, boilerplate, and exploration — faster, cheaper
 - **Open models** via OpenRouter for experimentation or when I want to test something against a specific model
 
 Since OpenRouter normalizes the API, switching between them in Crush is just a config change or session restart. No code changes needed.
