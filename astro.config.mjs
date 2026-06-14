@@ -19,6 +19,9 @@ export default defineConfig({
 				{ label: 'Projects', slug: 'projects' },
 				{ label: 'Now', slug: 'now' },
 			],
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 		}),
 	],
 });

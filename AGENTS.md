@@ -61,6 +61,7 @@ dist/                     — Build output (gitignored)
 - **File-based routing**: The URL path is the file path relative to `src/content/docs/`, minus the extension. A file at `src/content/docs/guides/example.md` becomes `/guides/example/`.
 - **Asset paths**: Assets referenced in MDX/Markdown frontmatter (like hero images) use paths relative to the content file. The index.mdx references `../../assets/houston.webp`.
 - **Duplicate titles**: Starlight renders the frontmatter `title` as the page heading automatically. Do **not** add a `# Title` heading in the Markdown body — it creates a visible duplicate.
+- **Component overrides**: Starlight supports component overrides via `starlight({ components: { Footer: './src/components/Footer.astro' } })`. The custom component can import and render the default via `import DefaultFooter from '@astrojs/starlight/components/Footer.astro'`.
 
 ## Dependencies
 
